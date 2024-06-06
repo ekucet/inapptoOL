@@ -7,16 +7,19 @@ let package = Package(
     name: "inapptoOL",
     platforms: [.iOS(.v14)],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "inapptoOL",
             targets: ["inapptoOL"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/siteline/swiftui-introspect", exact: "1.1.4"),
+    ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "inapptoOL"),
+            name: "inapptoOL",
+            dependencies: [
+                .product(name: "SwiftUIIntrospect", package: "swiftui-introspect")
+            ]),
         .testTarget(
             name: "inapptoOLTests",
             dependencies: ["inapptoOL"]),

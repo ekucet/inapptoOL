@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal extension Bundle {
+public extension Bundle {
     static var appVersionBundle: String? {
         guard
             let info = Bundle.main.infoDictionary,

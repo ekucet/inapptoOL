@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import SwiftUIIntrospect
 
-internal struct ScrollableViewContainer<Content>: View where Content: View {
+public struct ScrollableViewContainer<Content>: View where Content: View {
     let keyboardWillHideNotification = NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)
     
     let content: () -> Content

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-internal final class DeviceManager {
+public final class DeviceManager {
     
     public static var shared = DeviceManager()
     

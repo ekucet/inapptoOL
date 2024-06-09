@@ -8,13 +8,13 @@
 import Foundation
 import Network
 
-internal final class NetworkMonitor: ObservableObject {
+public final class NetworkMonitor: ObservableObject {
     let monitor = NWPathMonitor()
     let queue = DispatchQueue(label: "Monitor")
     
     @Published var isConnected = true
     
-    internal init() {
+    public init() {
         monitor.pathUpdateHandler = { [weak self] path in
             DispatchQueue.main.async {
                 self?.isConnected = path.status == .satisfied ? true : false

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-internal extension UIApplication {
+public extension UIApplication {
     static func openWebUrl(url: String) {
         guard let url = URL(string: url), UIApplication.shared.canOpenURL(url) else {
             return
@@ -17,7 +17,7 @@ internal extension UIApplication {
     }
 }
 
-internal extension UIApplication {
+public extension UIApplication {
     
     static func getRootViewController() -> UIViewController? {
         

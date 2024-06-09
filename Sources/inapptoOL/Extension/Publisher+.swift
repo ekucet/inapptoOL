@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-internal extension Publisher {
+public extension Publisher {
     func withPrevious<T>() -> AnyPublisher<(previous: Output, current: Output), Failure> where Output == Optional<T> {
         scan(Optional<(Output, Output)>.none) { ($0?.1, $1) }
             .compactMap { $0 }

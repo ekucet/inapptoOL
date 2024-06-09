@@ -10,7 +10,7 @@ import SwiftUI
 
 extension ScrollView {
     @ViewBuilder
-    internal func bounce(_ isBounce: Bool) -> some View {
+    public func bounce(_ isBounce: Bool) -> some View {
         modifier(ScrollViewModifier(isBounces: isBounce))
     }
 }

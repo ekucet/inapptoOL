@@ -8,5 +8,5 @@
 import Foundation
 
 public extension Int {
-    internal var boolValue: Bool? { return self != 0 }
+    public var boolValue: Bool? { return self != 0 }
 }

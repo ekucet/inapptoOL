@@ -7,13 +7,13 @@
 
 import Foundation
 
-internal extension Collection {
+public extension Collection {
     subscript (safe index: Self.Index) -> Iterator.Element? {
         (startIndex ..< endIndex).contains(index) ? self[index] : nil
     }
 }
 
-internal extension Collection {
+public extension Collection {
     subscript(safeIndex index: Index) -> Element? {
         guard indices.contains(index) else {
             print("💣 Error: The index is out of the range.")

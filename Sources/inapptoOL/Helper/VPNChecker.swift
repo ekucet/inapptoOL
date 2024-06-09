@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal struct VpnChecker {
+public struct VpnChecker {
     
     private static let vpnProtocolsKeysIdentifiers = ["tap", "tun", "ppp", "ipsec", "utun"]
     

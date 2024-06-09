@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal class NetworkService {
+public class NetworkService {
     
     public init() {}
     

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-internal extension UIWindow {
+public extension UIWindow {
     
     static var topMostController: UIViewController? {
         let keyWindow = UIApplication.shared.windows

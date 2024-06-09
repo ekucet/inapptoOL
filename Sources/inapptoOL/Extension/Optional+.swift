@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-internal extension Swift.Optional where Wrapped == Bool {
+public extension Swift.Optional where Wrapped == Bool {
     
     var orTrue: Bool {
         guard let self = self else {
@@ -33,7 +33,7 @@ internal extension Swift.Optional where Wrapped == Bool {
     }
 }
 
-internal extension Swift.Optional where Wrapped: EmptyValueRepresentable {
+public extension Swift.Optional where Wrapped: EmptyValueRepresentable {
     
     var orEmpty: Wrapped {
         switch self {
@@ -45,7 +45,7 @@ internal extension Swift.Optional where Wrapped: EmptyValueRepresentable {
     }
 }
 
-internal extension Swift.Optional where Wrapped == Int {
+public extension Swift.Optional where Wrapped == Int {
     
     func or(_ defaultValue: Int) -> Int {
         guard let self = self else {
@@ -63,7 +63,7 @@ internal extension Swift.Optional where Wrapped == Int {
     }
 }
 
-internal extension Swift.Optional where Wrapped == Decimal {
+public extension Swift.Optional where Wrapped == Decimal {
     
     func or(_ defaultValue: Decimal) -> Decimal {
         guard let self = self else {
@@ -81,7 +81,7 @@ internal extension Swift.Optional where Wrapped == Decimal {
     }
 }
 
-internal extension Swift.Optional {
+public extension Swift.Optional {
     
     var notNil: Bool {
         return self != nil
@@ -92,7 +92,7 @@ internal extension Swift.Optional {
     }
 }
 
-internal extension Swift.Optional where Wrapped == String {
+public extension Swift.Optional where Wrapped == String {
     
     var isNilOrEmpty: Bool {
         guard let self = self else {
@@ -102,7 +102,7 @@ internal extension Swift.Optional where Wrapped == String {
     }
 }
 
-internal extension Swift.Optional where Wrapped == String {
+public extension Swift.Optional where Wrapped == String {
     
     func or(_ defaultValue: String) -> String {
         guard let self = self, !self.isEmpty else {
@@ -119,7 +119,7 @@ internal extension Swift.Optional where Wrapped == String {
     }
 }
 
-internal extension Swift.Optional where Wrapped: ZeroValueRepresentable {
+public extension Swift.Optional where Wrapped: ZeroValueRepresentable {
     
     var orZero: Wrapped {
         switch self {
@@ -131,7 +131,7 @@ internal extension Swift.Optional where Wrapped: ZeroValueRepresentable {
     }
 }
 
-internal extension Swift.Optional where Wrapped == String {
+public extension Swift.Optional where Wrapped == String {
     
     var _bound: String? {
         get {
@@ -166,7 +166,7 @@ extension Dictionary: EmptyValueRepresentable {public static var emptyValue: [Ke
 
 extension UIEdgeInsets: EmptyValueRepresentable { public static var emptyValue: UIEdgeInsets { return .zero } }
 
-internal protocol ZeroValueRepresentable { static var zeroValue: Self { get } }
+public protocol ZeroValueRepresentable { static var zeroValue: Self { get } }
 
 extension Int: ZeroValueRepresentable { public static var zeroValue: Int { return 0 } }
 

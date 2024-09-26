@@ -26,7 +26,7 @@ import Combine
  }
  ***/
 @propertyWrapper
-final class UserDefault<T: Codable>: NSObject {
+public final class UserDefault<T: Codable>: NSObject {
     
     private let userDefaults: UserDefaults
     private let key: String
